@@ -351,10 +351,10 @@
 			};
 		};
 	//]]></script>
-	<script type="text/javascript" src="protofs.js"></script>
+	<script type="text/javascript" src="indexfs.js"></script>
 	<script>
 		(function() {
-			var memoryInitializer = "proto.mem";
+			var memoryInitializer = "index.mem";
 			if (typeof Module.locateFile === "function") {
 				memoryInitializer = Module.locateFile(memoryInitializer);
 			} else if (Module.memoryInitializerPrefixURL) {
@@ -367,7 +367,7 @@
 		})();
 
 		var script = document.createElement("script");
-		script.src = "proto.js";
+		script.src = "index.js";
 		document.body.appendChild(script);
 	</script>
 </body>
