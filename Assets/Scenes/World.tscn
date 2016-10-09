@@ -95,31 +95,7 @@ environment = SubResource( 2 )
 
 [node name="Ball" parent="." instance=ExtResource( 2 )]
 
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0437148, 1.19208, 3.40501 )
-
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
-
-_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 0.12966, -0.512189, 0.849029, 0.0773225, 0.858873, 0.506319, -0.988539, 0, 0.150965, 20, 4, 11.0942 )
-layers = 1
-params/enabled = true
-params/editor_only = false
-params/bake_mode = 0
-params/energy = 1.0
-colors/diffuse = Color( 1, 1, 1, 1 )
-colors/specular = Color( 1, 1, 1, 1 )
-shadow/shadow = false
-shadow/darkening = 0.0
-shadow/z_offset = 0.05
-shadow/z_slope_scale = 0.0
-shadow/esm_multiplier = 60.0
-shadow/blur_passes = 1.0
-projector = null
-operator = 0
-shadow/mode = 0
-shadow/max_distance = 0.0
-shadow/split_weight = 0.5
-shadow/zoffset_scale = 2.0
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0437148, 0.19208, 3.40501 )
 
 [node name="Camera" type="Camera" parent="."]
 
@@ -1068,6 +1044,56 @@ script/script = ExtResource( 8 )
 
 transform/pos = Vector2( 34, 567 )
 texture = SubResource( 3 )
+
+[node name="Lighting" type="Node" parent="."]
+
+[node name="Key Light" type="DirectionalLight" parent="Lighting"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.12966, -0.512189, 0.849029, 0.0773225, 0.858873, 0.506319, -0.988539, 0, 0.150965, 20, 4, 11.0942 )
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 0
+params/energy = 1.0
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = true
+shadow/darkening = 0.0
+shadow/z_offset = 0.05
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+shadow/mode = 3
+shadow/max_distance = 50.0
+shadow/split_weight = 0.5
+shadow/zoffset_scale = 2.0
+
+[node name="Fill Light" type="DirectionalLight" parent="Lighting"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( -0.12966, -0.512189, -0.849029, -0.0773225, 0.858873, -0.506319, 0.988539, 0, -0.150965, 20, 4, 11.0942 )
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 0
+params/energy = 0.2
+colors/diffuse = Color( 0.394531, 0.010788, 0.010788, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.05
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+shadow/mode = 3
+shadow/max_distance = 50.0
+shadow/split_weight = 0.5
+shadow/zoffset_scale = 2.0
 
 [connection signal="body_enter" from="." to="." method="_on_World_body_enter"]
 
