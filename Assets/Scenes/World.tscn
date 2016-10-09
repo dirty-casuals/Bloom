@@ -20,7 +20,7 @@ ambient_light/color = Color( 0.00253296, 0.0301778, 0.324219, 1 )
 ambient_light/energy = 1.0
 fxaa/enabled = true
 background/mode = 2
-background/color = Color( 0, 0, 0, 1 )
+background/color = Color( 0.125, 0.125, 0.125, 1 )
 background/energy = 1.0
 background/scale = 1.0
 background/glow = 0.0
@@ -115,11 +115,8 @@ script/script = ExtResource( 3 )
 
 [node name="Tiles" type="Node" parent="."]
 
-editor/display_folded = true
-
 [node name="Row 1" type="Spatial" parent="Tiles"]
 
-editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="TileStandard1011" parent="Tiles/Row 1" instance=ExtResource( 4 )]
