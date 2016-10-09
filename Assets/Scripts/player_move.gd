@@ -7,7 +7,7 @@ const min_forwards_speed = 5
 const score_decrement_per_frame = 1
 
 var sideways_input = 0
-var forwards_speed = 5
+var forwards_speed = 7
 var position = Vector3(0, 0, 0)
 var current_row = 0
 var score_label
