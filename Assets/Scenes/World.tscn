@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://Assets/Scripts/world.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scenes/ball.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Scenes/Tile_standard.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Scenes/Tile_jump.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Scenes/Tile_reverb.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Scripts/score.gd" type="Script" id=8]
 
 [sub_resource type="PlaneShape" id=1]
 
@@ -148,22 +149,27 @@ _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 [node name="TileStandard1011" parent="Tiles/Row 1" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 0
 
 [node name="TileStandard11" parent="Tiles/Row 1" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 0
 
 [node name="TileStandard103" parent="Tiles/Row 1" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 0
 
 [node name="TileStandard106" parent="Tiles/Row 1" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 0
 
 [node name="TileStandard108" parent="Tiles/Row 1" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 0
 
 [node name="Row 2" type="Spatial" parent="Tiles"]
 
@@ -174,22 +180,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7 )
 [node name="TileStandard107" parent="Tiles/Row 2" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 1
 
 [node name="TileStandard104" parent="Tiles/Row 2" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 1
 
 [node name="TileStandard109" parent="Tiles/Row 2" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 1
 
 [node name="TileStandard105" parent="Tiles/Row 2" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 1
 
 [node name="TileStandard1010" parent="Tiles/Row 2" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 1
 
 [node name="Row 3" type="Spatial" parent="Tiles"]
 
@@ -200,22 +211,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14 )
 [node name="TileStandard10 10" parent="Tiles/Row 3" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 2
 
 [node name="TileStandard10" parent="Tiles/Row 3" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 2
 
 [node name="TileStandard10 2" parent="Tiles/Row 3" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 2
 
 [node name="TileStandard10 5" parent="Tiles/Row 3" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 2
 
 [node name="TileStandard10 7" parent="Tiles/Row 3" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 2
 
 [node name="Row 4" type="Spatial" parent="Tiles"]
 
@@ -226,22 +242,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21 )
 [node name="TileStandard10 6" parent="Tiles/Row 4" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 3
 
 [node name="TileStandard10 3" parent="Tiles/Row 4" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 3
 
 [node name="TileStandard10 8" parent="Tiles/Row 4" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 3
 
 [node name="TileStandard10 4" parent="Tiles/Row 4" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 3
 
 [node name="TileStandard10 9" parent="Tiles/Row 4" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 3
 
 [node name="Row 5" type="Spatial" parent="Tiles"]
 
@@ -252,22 +273,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 28 )
 [node name="TileStandard7" parent="Tiles/Row 5" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 4
 
 [node name="TileStandard4" parent="Tiles/Row 5" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 4
 
 [node name="TileStandard6" parent="Tiles/Row 5" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 4
 
 [node name="TileStandard5" parent="Tiles/Row 5" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 4
 
 [node name="TileStandard9" parent="Tiles/Row 5" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 4
 
 [node name="Row 6" type="Spatial" parent="Tiles"]
 
@@ -278,22 +304,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35 )
 [node name="TileStandard" parent="Tiles/Row 6" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 5
 
 [node name="TileStandard2" parent="Tiles/Row 6" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 5
 
 [node name="TileStandard1" parent="Tiles/Row 6" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 5
 
 [node name="TileStandard3" parent="Tiles/Row 6" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 5
 
 [node name="TileStandard8" parent="Tiles/Row 6" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 5
 
 [node name="Row 7" type="Spatial" parent="Tiles"]
 
@@ -304,14 +335,17 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 42 )
 [node name="TileStandard" parent="Tiles/Row 7" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 6
 
 [node name="TileStandard2 2" parent="Tiles/Row 7" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 6
 
 [node name="TileStandard1" parent="Tiles/Row 7" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 6
 
 [node name="Row 8" type="Spatial" parent="Tiles"]
 
@@ -322,14 +356,17 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 49 )
 [node name="TileStandard2" parent="Tiles/Row 8" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 7
 
 [node name="TileStandard1" parent="Tiles/Row 8" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 7
 
 [node name="TileStandard3" parent="Tiles/Row 8" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 7
 
 [node name="Row 9" type="Spatial" parent="Tiles"]
 
@@ -340,14 +377,17 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 56 )
 [node name="TileStandard" parent="Tiles/Row 9" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 8
 
 [node name="TileStandard 2" parent="Tiles/Row 9" instance=ExtResource( 6 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 8
 
 [node name="TileStandard1" parent="Tiles/Row 9" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 8
 
 [node name="Row 10" type="Spatial" parent="Tiles"]
 
@@ -358,18 +398,22 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 63 )
 [node name="TileStandard" parent="Tiles/Row 10" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 9
 
 [node name="TileStandard2" parent="Tiles/Row 10" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 9
 
 [node name="TileStandard3" parent="Tiles/Row 10" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 9
 
 [node name="TileStandard8" parent="Tiles/Row 10" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 9
 
 [node name="Row 11" type="Spatial" parent="Tiles"]
 
@@ -380,18 +424,22 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 70 )
 [node name="TileStandard7" parent="Tiles/Row 11" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 10
 
 [node name="TileStandard6" parent="Tiles/Row 11" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 10
 
 [node name="TileStandard5" parent="Tiles/Row 11" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 10
 
 [node name="TileStandard9" parent="Tiles/Row 11" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 10
 
 [node name="Row 12" type="Spatial" parent="Tiles"]
 
@@ -402,22 +450,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 77 )
 [node name="TileStandard" parent="Tiles/Row 12" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 11
 
 [node name="TileStandard2" parent="Tiles/Row 12" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 11
 
 [node name="TileStandard1" parent="Tiles/Row 12" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 11
 
 [node name="TileStandard3" parent="Tiles/Row 12" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 11
 
 [node name="TileStandard8" parent="Tiles/Row 12" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 11
 
 [node name="Row 13" type="Spatial" parent="Tiles"]
 
@@ -428,22 +481,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 84 )
 [node name="TileStandard7" parent="Tiles/Row 13" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 12
 
 [node name="TileStandard4" parent="Tiles/Row 13" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 12
 
 [node name="TileStandard6" parent="Tiles/Row 13" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 12
 
 [node name="TileStandard5" parent="Tiles/Row 13" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 12
 
 [node name="TileStandard9" parent="Tiles/Row 13" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 12
 
 [node name="Row 14" type="Spatial" parent="Tiles"]
 
@@ -454,22 +512,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 91 )
 [node name="TileStandard" parent="Tiles/Row 14" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 13
 
 [node name="TileStandard2" parent="Tiles/Row 14" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 13
 
 [node name="TileStandard1" parent="Tiles/Row 14" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 13
 
 [node name="TileStandard3" parent="Tiles/Row 14" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 13
 
 [node name="TileStandard8" parent="Tiles/Row 14" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 13
 
 [node name="Row 15" type="Spatial" parent="Tiles"]
 
@@ -480,22 +543,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 98 )
 [node name="TileStandard7" parent="Tiles/Row 15" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 14
 
 [node name="TileStandard4" parent="Tiles/Row 15" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 14
 
 [node name="TileStandard6" parent="Tiles/Row 15" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 14
 
 [node name="TileStandard5" parent="Tiles/Row 15" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 14
 
 [node name="TileStandard9" parent="Tiles/Row 15" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 14
 
 [node name="Row 16" type="Spatial" parent="Tiles"]
 
@@ -506,22 +574,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 105 )
 [node name="TileStandard" parent="Tiles/Row 16" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 15
 
 [node name="TileStandard2" parent="Tiles/Row 16" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 15
 
 [node name="TileStandard1" parent="Tiles/Row 16" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 15
 
 [node name="TileStandard3" parent="Tiles/Row 16" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 15
 
 [node name="TileStandard8" parent="Tiles/Row 16" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 15
 
 [node name="Row 17" type="Spatial" parent="Tiles"]
 
@@ -532,22 +605,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 112 )
 [node name="TileStandard7" parent="Tiles/Row 17" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 16
 
 [node name="TileStandard4" parent="Tiles/Row 17" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 16
 
 [node name="TileStandard6" parent="Tiles/Row 17" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 16
 
 [node name="TileStandard5" parent="Tiles/Row 17" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 16
 
 [node name="TileStandard9" parent="Tiles/Row 17" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 16
 
 [node name="Row 18" type="Spatial" parent="Tiles"]
 
@@ -558,22 +636,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 119 )
 [node name="TileStandard" parent="Tiles/Row 18" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 17
 
 [node name="TileStandard2" parent="Tiles/Row 18" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 17
 
 [node name="TileStandard1" parent="Tiles/Row 18" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 17
 
 [node name="TileStandard3" parent="Tiles/Row 18" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 17
 
 [node name="TileStandard8" parent="Tiles/Row 18" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 17
 
 [node name="Row 19" type="Spatial" parent="Tiles"]
 
@@ -584,22 +667,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 126 )
 [node name="TileStandard7" parent="Tiles/Row 19" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 18
 
 [node name="TileStandard4" parent="Tiles/Row 19" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 18
 
 [node name="TileJump" parent="Tiles/Row 19" instance=ExtResource( 7 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 18
 
 [node name="TileStandard5" parent="Tiles/Row 19" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 18
 
 [node name="TileStandard9" parent="Tiles/Row 19" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 18
 
 [node name="Row 20" type="Spatial" parent="Tiles"]
 
@@ -610,22 +698,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 133 )
 [node name="TileStandard" parent="Tiles/Row 20" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 19
 
 [node name="TileStandard2" parent="Tiles/Row 20" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 19
 
 [node name="TileStandard1" parent="Tiles/Row 20" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 19
 
 [node name="TileStandard3" parent="Tiles/Row 20" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 19
 
 [node name="TileStandard8" parent="Tiles/Row 20" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 19
 
 [node name="Row 21" type="Spatial" parent="Tiles"]
 
@@ -636,22 +729,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 140 )
 [node name="TileStandard7" parent="Tiles/Row 21" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 20
 
 [node name="TileStandard4" parent="Tiles/Row 21" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 20
 
 [node name="TileStandard6" parent="Tiles/Row 21" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 20
 
 [node name="TileStandard5" parent="Tiles/Row 21" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 20
 
 [node name="TileStandard9" parent="Tiles/Row 21" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 20
 
 [node name="Row 22" type="Spatial" parent="Tiles"]
 
@@ -662,22 +760,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 147 )
 [node name="TileStandard" parent="Tiles/Row 22" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 21
 
 [node name="TileStandard2" parent="Tiles/Row 22" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 21
 
 [node name="TileStandard1" parent="Tiles/Row 22" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 21
 
 [node name="TileStandard3" parent="Tiles/Row 22" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 21
 
 [node name="TileStandard8" parent="Tiles/Row 22" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 21
 
 [node name="Row 23" type="Spatial" parent="Tiles"]
 
@@ -688,22 +791,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 154 )
 [node name="TileStandard7" parent="Tiles/Row 23" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 22
 
 [node name="TileStandard4" parent="Tiles/Row 23" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 22
 
 [node name="TileStandard6" parent="Tiles/Row 23" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 22
 
 [node name="TileStandard5" parent="Tiles/Row 23" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 22
 
 [node name="TileStandard9" parent="Tiles/Row 23" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 22
 
 [node name="Row 24" type="Spatial" parent="Tiles"]
 
@@ -714,22 +822,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 161 )
 [node name="TileStandard" parent="Tiles/Row 24" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 23
 
 [node name="TileStandard2" parent="Tiles/Row 24" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 23
 
 [node name="TileStandard1" parent="Tiles/Row 24" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 23
 
 [node name="TileStandard3" parent="Tiles/Row 24" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 23
 
 [node name="TileStandard8" parent="Tiles/Row 24" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 23
 
 [node name="Row 25" type="Spatial" parent="Tiles"]
 
@@ -740,22 +853,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 168 )
 [node name="TileStandard7" parent="Tiles/Row 25" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 24
 
 [node name="TileStandard4" parent="Tiles/Row 25" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 24
 
 [node name="TileStandard6" parent="Tiles/Row 25" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 24
 
 [node name="TileStandard5" parent="Tiles/Row 25" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 24
 
 [node name="TileStandard9" parent="Tiles/Row 25" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 24
 
 [node name="Row 26" type="Spatial" parent="Tiles"]
 
@@ -766,22 +884,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 175 )
 [node name="TileStandard" parent="Tiles/Row 26" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 25
 
 [node name="TileStandard2" parent="Tiles/Row 26" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 25
 
 [node name="TileStandard1" parent="Tiles/Row 26" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 25
 
 [node name="TileStandard3" parent="Tiles/Row 26" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 25
 
 [node name="TileStandard8" parent="Tiles/Row 26" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 25
 
 [node name="Row 27" type="Spatial" parent="Tiles"]
 
@@ -792,22 +915,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 182 )
 [node name="TileStandard7" parent="Tiles/Row 27" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 26
 
 [node name="TileStandard4" parent="Tiles/Row 27" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 26
 
 [node name="TileStandard6" parent="Tiles/Row 27" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 26
 
 [node name="TileStandard5" parent="Tiles/Row 27" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 26
 
 [node name="TileStandard9" parent="Tiles/Row 27" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 26
 
 [node name="Row 28" type="Spatial" parent="Tiles"]
 
@@ -818,22 +946,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 189 )
 [node name="TileStandard" parent="Tiles/Row 28" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 27
 
 [node name="TileStandard2" parent="Tiles/Row 28" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 27
 
 [node name="TileStandard1" parent="Tiles/Row 28" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 27
 
 [node name="TileStandard3" parent="Tiles/Row 28" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 27
 
 [node name="TileStandard8" parent="Tiles/Row 28" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 27
 
 [node name="Row 29" type="Spatial" parent="Tiles"]
 
@@ -844,22 +977,27 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 196 )
 [node name="TileStandard7" parent="Tiles/Row 29" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
+row = 28
 
 [node name="TileStandard4" parent="Tiles/Row 29" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
+row = 28
 
 [node name="TileStandard6" parent="Tiles/Row 29" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+row = 28
 
 [node name="TileStandard5" parent="Tiles/Row 29" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
+row = 28
 
 [node name="TileStandard9" parent="Tiles/Row 29" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
+row = 28
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 
@@ -924,6 +1062,7 @@ uppercase = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script/script = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="UI"]
 
