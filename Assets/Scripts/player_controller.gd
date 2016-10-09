@@ -1,13 +1,12 @@
 
 extends RigidBody
 
-const sideways_speed = 10
-const max_forwards_speed = 30
-const min_forwards_speed = 5
-
+var sideways_speed = 10
 var sideways_input = 0
 var forwards_speed = 5
-var position = Vector3(0, 0, 0)
+var max_forwards_speed = 30
+var min_forwards_speed = 5
+var position = Vector3(0,0,0)
 var current_row = 0
 var score_label
 var score = 0
@@ -36,7 +35,7 @@ func _fixed_process(delta):
 	if forwards_speed < min_forwards_speed:
 		forwards_speed = min_forwards_speed
 
-	apply_impulse(get_translation(), Vector3(sideways_input * sideways_speed * delta, 0, forwards_speed * delta))
+	apply_impulse(position, Vector3(sideways_input * sideways_speed * delta, 0, forwards_speed * delta))
 
 func on_enter_tile(points, row):
 	if row > current_row:

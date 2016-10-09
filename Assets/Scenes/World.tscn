@@ -20,7 +20,7 @@ ambient_light/color = Color( 0.00253296, 0.0301778, 0.324219, 1 )
 ambient_light/energy = 1.0
 fxaa/enabled = true
 background/mode = 2
-background/color = Color( 0.125, 0.125, 0.125, 1 )
+background/color = Color( 0, 0, 0, 1 )
 background/energy = 1.0
 background/scale = 1.0
 background/glow = 0.0
@@ -95,7 +95,7 @@ environment = SubResource( 2 )
 
 [node name="Ball" parent="." instance=ExtResource( 2 )]
 
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0437148, 0.19208, 3.40501 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043715, 0, 3.40501 )
 
 [node name="Camera" type="Camera" parent="."]
 
@@ -117,6 +117,7 @@ script/script = ExtResource( 3 )
 
 [node name="Row 1" type="Spatial" parent="Tiles"]
 
+editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="TileStandard1011" parent="Tiles/Row 1" instance=ExtResource( 4 )]
@@ -788,7 +789,6 @@ row = 22
 
 [node name="Row 24" type="Spatial" parent="Tiles"]
 
-editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 161 )
 
@@ -819,7 +819,6 @@ row = 23
 
 [node name="Row 25" type="Spatial" parent="Tiles"]
 
-editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 168 )
 
@@ -850,7 +849,6 @@ row = 24
 
 [node name="Row 26" type="Spatial" parent="Tiles"]
 
-editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 175 )
 
@@ -881,7 +879,6 @@ row = 25
 
 [node name="Row 27" type="Spatial" parent="Tiles"]
 
-editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 182 )
 
@@ -912,7 +909,6 @@ row = 26
 
 [node name="Row 28" type="Spatial" parent="Tiles"]
 
-editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 189 )
 
@@ -982,6 +978,8 @@ _update_shape_index = 0
 
 [node name="UI" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="GameOver" type="Label" parent="UI"]
 
 visibility/visible = false
@@ -1043,6 +1041,8 @@ transform/pos = Vector2( 34, 567 )
 texture = SubResource( 3 )
 
 [node name="Lighting" type="Node" parent="."]
+
+editor/display_folded = true
 
 [node name="Key Light" type="DirectionalLight" parent="Lighting"]
 
