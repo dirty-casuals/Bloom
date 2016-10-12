@@ -1,18 +1,13 @@
 [gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Assets/Scripts/fast_tile.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Meshes/Platform.msh" type="Mesh" id=2]
 
 [sub_resource type="BoxShape" id=1]
 
 extents = Vector3( 1, 1, 1 )
 
-[sub_resource type="Mesh" id=2]
-
-resource/name = "box"
-surfaces/0 = { "alphasort":false, "arrays":[ Vector3Array( 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, 1, 1, -1, -1, -1, -1, -1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1 ), Vector3Array( 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1 ), null, null, Vector2Array( 0, 0, 2, 0, 2, 2, 0, 2, 0, 0, 2, 0, 2, 2, 2, 2, 0, 2, 0, 0, 0, 0, 2, 0, 2, 2, 0, 2, 0, 0, 2, 0, 2, 2, 2, 2, 0, 2, 0, 0, 0, 0, 2, 0, 2, 2, 0, 2, 0, 0, 2, 0, 2, 2, 2, 2, 0, 2, 0, 0 ), null, null, null, IntArray( 0, 1, 2, 2, 3, 0, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12, 13, 10, 14, 15, 16, 17, 18, 19, 20, 21, 22, 22, 23, 20, 24, 25, 26, 27, 28, 29 ) ], "morph_arrays":[  ], "primitive":4 }
-custom_aabb/custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-
-[sub_resource type="FixedMaterial" id=3]
+[sub_resource type="FixedMaterial" id=2]
 
 flags/visible = true
 flags/double_sided = false
@@ -29,7 +24,7 @@ fixed_flags/use_color_array = false
 fixed_flags/use_point_size = false
 fixed_flags/discard_alpha = false
 fixed_flags/use_xy_normalmap = false
-params/diffuse = Color( 0.503906, 0.20668, 0.20668, 1 )
+params/diffuse = Color( 0.501961, 0.203922, 0.203922, 1 )
 params/specular = Color( 0, 0, 0, 1 )
 params/emission = Color( 0, 0, 0, 1 )
 params/specular_exp = 40
@@ -49,7 +44,7 @@ textures/glow_tc = 0
 textures/normal_tc = 0
 textures/shade_param_tc = 0
 
-[sub_resource type="BoxShape" id=4]
+[sub_resource type="BoxShape" id=3]
 
 extents = Vector3( 1, 1, 1 )
 
@@ -82,7 +77,7 @@ _update_shape_index = 0
 [node name="Box" type="MeshInstance" parent="."]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 2.5, 0, 0, 0, 0.5, 0, 0, 0, 3.5, 0, -0.5, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
 layers = 1
 geometry/visible = true
 geometry/material_override = null
@@ -97,9 +92,9 @@ geometry/depth_scale = false
 geometry/visible_in_all_rooms = false
 geometry/use_baked_light = false
 geometry/baked_light_tex_id = 0
-mesh/mesh = SubResource( 2 )
+mesh/mesh = ExtResource( 2 )
 mesh/skeleton = NodePath("..")
-material/0 = SubResource( 3 )
+material/0 = SubResource( 2 )
 
 [node name="Area" type="Area" parent="."]
 
@@ -107,7 +102,7 @@ _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 input/ray_pickable = false
 input/capture_on_drag = false
 shape_count = 1
-shapes/0/shape = SubResource( 4 )
+shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.5, 0, 0, 0 )
 shapes/0/trigger = true
 space_override = 0
@@ -127,7 +122,7 @@ collision/mask = 1
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.5, 0, 0, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
 

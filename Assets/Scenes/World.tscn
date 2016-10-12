@@ -119,9 +119,10 @@ script/script = ExtResource( 3 )
 
 [node name="Tiles" type="Node" parent="."]
 
+editor/display_folded = true
+
 [node name="Row 1" type="Spatial" parent="Tiles"]
 
-editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="TileSafe" parent="Tiles/Row 1" instance=ExtResource( 4 )]
@@ -12292,7 +12293,7 @@ margin/top = 19.0
 margin/right = 862.0
 margin/bottom = 35.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Score:"
+text = "Time:"
 uppercase = true
 percent_visible = 1.0
 lines_skipped = 0
@@ -12341,12 +12342,10 @@ texture = SubResource( 3 )
 
 [node name="Lighting" type="Node" parent="."]
 
-editor/display_folded = true
-
 [node name="Key Light" type="DirectionalLight" parent="Lighting"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 0.12966, -0.512189, 0.849029, 0.0773225, 0.858873, 0.506319, -0.988539, 0, 0.150965, 20, 4, 11.0942 )
+transform/local = Transform( 0.12966, -0.512189, 0.849029, -0.347697, 0.778403, 0.522681, -0.928598, -0.362975, -0.0771589, 20, 4, 11.0942 )
 layers = 1
 params/enabled = true
 params/editor_only = false
@@ -12370,13 +12369,13 @@ shadow/zoffset_scale = 2.0
 [node name="Fill Light" type="DirectionalLight" parent="Lighting"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( -0.12966, -0.512189, -0.849029, -0.0773225, 0.858873, -0.506319, 0.988539, 0, -0.150965, 20, 4, 11.0942 )
+transform/local = Transform( -0.15019, -0.101225, -0.983461, -0.0152813, 0.994864, -0.100066, 0.988539, 0, -0.150965, 20, 4, 11.0942 )
 layers = 1
 params/enabled = true
 params/editor_only = false
 params/bake_mode = 0
-params/energy = 0.2
-colors/diffuse = Color( 0.394531, 0.010788, 0.010788, 1 )
+params/energy = 0.5
+colors/diffuse = Color( 0.106689, 0, 0.71875, 1 )
 colors/specular = Color( 1, 1, 1, 1 )
 shadow/shadow = false
 shadow/darkening = 0.0
