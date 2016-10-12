@@ -1516,7 +1516,6 @@ row = 52
 [node name="TileSlow" parent="Tiles/Row 53" instance=ExtResource( 9 )]
 
 row = 53
-slow_speed = -20
 
 [node name="TileStandard4" parent="Tiles/Row 53" instance=ExtResource( 5 )]
 
@@ -1552,7 +1551,6 @@ row = 53
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
 row = 54
-slow_speed = -20
 
 [node name="TileStandard5" parent="Tiles/Row 54" instance=ExtResource( 5 )]
 
@@ -1588,7 +1586,6 @@ row = 54
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
 row = 55
-slow_speed = -20
 
 [node name="Row 56" type="Spatial" parent="Tiles"]
 
