@@ -14,6 +14,7 @@ var score_label
 var score = 0
 var velocity = Vector3()
 var jumping = false
+var steer_inversion = 1
 
 func _ready():
 	set_fixed_process(true)
@@ -34,10 +35,10 @@ func _fixed_process(delta):
 	var force = Vector3(0, GRAVITY, 0)
 
 	if Input.is_action_pressed("ui_left"):
-		sideways_input = 1
+		sideways_input = 1 * steer_inversion
 
 	if Input.is_action_pressed('ui_right'):
-		sideways_input = -1
+		sideways_input = -1 * steer_inversion
 
 	velocity.x = velocity.x + (sideways_input * SIDEWAYS_SPEED * delta)
 	velocity.z = velocity.z + (forwards_speed * delta)
@@ -65,8 +66,8 @@ func on_enter_tile(points, row):
 		current_row = row
 		score_label.update_score(score)
 
-func jump():
-	if not jumping:
+func jump(row):
+	if row > current_row and not jumping:
 		print("jump")
 		jumping = true
 		velocity.y = velocity.y + JUMP_SPEED
@@ -74,4 +75,8 @@ func jump():
 func alter_speed(speed, row):
 	if row > current_row: 
 		velocity.z = velocity.z + speed
+
+func switch_steering(row):
+	if row > current_row: 
+		steer_inversion = -steer_inversion
 
