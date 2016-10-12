@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=1]
 
-[ext_resource path="res://Assets/Scripts/fast_tile.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Scripts/switch_tile.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Meshes/Platform.msh" type="Mesh" id=2]
 
 [sub_resource type="BoxShape" id=1]
@@ -24,7 +24,7 @@ fixed_flags/use_color_array = false
 fixed_flags/use_point_size = false
 fixed_flags/discard_alpha = false
 fixed_flags/use_xy_normalmap = false
-params/diffuse = Color( 0.501961, 0.203922, 0.203922, 1 )
+params/diffuse = Color( 1, 0.203125, 0.63269, 1 )
 params/specular = Color( 1, 1, 1, 1 )
 params/emission = Color( 0, 0, 0, 1 )
 params/specular_exp = 40
@@ -48,7 +48,7 @@ textures/shade_param_tc = 0
 
 extents = Vector3( 1, 1, 1 )
 
-[node name="TileFast" type="StaticBody"]
+[node name="TileStandard" type="StaticBody"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 input/ray_pickable = true
@@ -65,7 +65,6 @@ constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 script/script = ExtResource( 1 )
 row = null
-fast_speed = 25
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 
@@ -127,8 +126,6 @@ shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
 
-[connection signal="body_enter" from="Area" to="Area" method="_on_Area_body_enter"]
-
-[connection signal="body_enter" from="Area" to="Area" method="_on_body_enter"]
+[connection signal="body_enter" from="Area" to="." method="_on_body_enter"]
 
 
