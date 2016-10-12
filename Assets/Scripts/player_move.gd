@@ -1,14 +1,15 @@
 
 extends KinematicBody
 
-const SIDEWAYS_SPEED = 10
+const SIDEWAYS_SPEED = 15
 const SCORE_DECREMENT_PER_FRAME = 1
 const GRAVITY = -200
 const JUMP_SPEED = 75
+const MAX_FORWARD_SPEED = 75
 
 var forwards_speed = 7
 var position = Vector3(0, 0, 0)
-var current_row = 0
+var current_row = 09
 var score_label
 var score = 0
 var velocity = Vector3()
@@ -40,6 +41,10 @@ func _fixed_process(delta):
 
 	velocity.x = velocity.x + (sideways_input * SIDEWAYS_SPEED * delta)
 	velocity.z = velocity.z + (forwards_speed * delta)
+	
+	if velocity.z > MAX_FORWARD_SPEED:
+		velocity.z = MAX_FORWARD_SPEED
+	
 	velocity = velocity + (force * delta)
 
 	var motion = velocity * delta
@@ -66,6 +71,7 @@ func jump():
 		jumping = true
 		velocity.y = velocity.y + JUMP_SPEED
 
-func alter_speed(speed):
-	velocity.z = velocity.z + speed
+func alter_speed(speed, row):
+	if row > current_row: 
+		velocity.z = velocity.z + speed
 

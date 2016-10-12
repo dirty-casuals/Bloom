@@ -1537,7 +1537,6 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 371 )
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
 row = 54
-fast_speed = 25
 
 [node name="TileStandard2" parent="Tiles/Row 54" instance=ExtResource( 6 )]
 
@@ -1574,7 +1573,6 @@ row = 54
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
 row = 55
-fast_speed = 25
 
 [node name="TileStandard3" parent="Tiles/Row 55" instance=ExtResource( 6 )]
 
@@ -1610,7 +1608,6 @@ row = 55
 [node name="TileFast" parent="Tiles/Row 56" instance=ExtResource( 10 )]
 
 row = 56
-fast_speed = 25
 
 [node name="TileStandard4" parent="Tiles/Row 56" instance=ExtResource( 6 )]
 
