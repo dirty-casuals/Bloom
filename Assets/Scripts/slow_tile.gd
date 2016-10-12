@@ -1,6 +1,8 @@
 
 extends 'tile.gd'
 
+export var slow_speed = -20
+
 func _on_Area_body_enter(body):
 	if(body == player):
-		player.apply_impulse(player.get_translation(), Vector3(0, 0, -5))
+		player.alter_speed(slow_speed)

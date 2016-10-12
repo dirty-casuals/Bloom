@@ -803,6 +803,7 @@ row = 24
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
 row = 25
+reverb_speed = -75
 
 [node name="TileStandard3" parent="Tiles/Row 25" instance=ExtResource( 6 )]
 
@@ -813,6 +814,7 @@ row = 24
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
 row = 25
+reverb_speed = -75
 
 [node name="TileStandard5" parent="Tiles/Row 25" instance=ExtResource( 6 )]
 
@@ -1514,6 +1516,7 @@ row = 52
 [node name="TileSlow" parent="Tiles/Row 53" instance=ExtResource( 9 )]
 
 row = 53
+slow_speed = -20
 
 [node name="TileStandard4" parent="Tiles/Row 53" instance=ExtResource( 5 )]
 
@@ -1534,6 +1537,7 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 371 )
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
 row = 54
+fast_speed = 25
 
 [node name="TileStandard2" parent="Tiles/Row 54" instance=ExtResource( 6 )]
 
@@ -1549,6 +1553,7 @@ row = 53
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
 row = 54
+slow_speed = -20
 
 [node name="TileStandard5" parent="Tiles/Row 54" instance=ExtResource( 5 )]
 
@@ -1569,6 +1574,7 @@ row = 54
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
 row = 55
+fast_speed = 25
 
 [node name="TileStandard3" parent="Tiles/Row 55" instance=ExtResource( 6 )]
 
@@ -1584,6 +1590,7 @@ row = 54
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
 row = 55
+slow_speed = -20
 
 [node name="Row 56" type="Spatial" parent="Tiles"]
 
@@ -1603,6 +1610,7 @@ row = 55
 [node name="TileFast" parent="Tiles/Row 56" instance=ExtResource( 10 )]
 
 row = 56
+fast_speed = 25
 
 [node name="TileStandard4" parent="Tiles/Row 56" instance=ExtResource( 6 )]
 
@@ -12345,7 +12353,7 @@ texture = SubResource( 3 )
 [node name="Key Light" type="DirectionalLight" parent="Lighting"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 0.12966, -0.512189, 0.849029, -0.347697, 0.778403, 0.522681, -0.928598, -0.362975, -0.0771589, 20, 4, 11.0942 )
+transform/local = Transform( 0.140874, 0.72515, -0.674027, -0.319899, 0.677637, 0.662173, 0.936919, 0.122337, 0.327436, 20, 4, 11.0942 )
 layers = 1
 params/enabled = true
 params/editor_only = false
