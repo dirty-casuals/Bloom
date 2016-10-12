@@ -4,7 +4,7 @@ extends KinematicBody
 const SIDEWAYS_SPEED = 10
 const SCORE_DECREMENT_PER_FRAME = 1
 const GRAVITY = -200
-const JUMP_SPEED = 90
+const JUMP_SPEED = 75
 
 var forwards_speed = 7
 var position = Vector3(0, 0, 0)
@@ -12,7 +12,7 @@ var current_row = 0
 var score_label
 var score = 0
 var velocity = Vector3()
-var jump = false
+var jumping = false
 
 func _ready():
 	set_fixed_process(true)
@@ -51,6 +51,9 @@ func _fixed_process(delta):
 		velocity = n.slide(velocity)
 		move(motion)
 
+	if jumping and velocity.y > 0:
+		jumping = false
+
 func on_enter_tile(points, row):
 	if row > current_row:
 		score = score + (points * forwards_speed)
@@ -58,7 +61,10 @@ func on_enter_tile(points, row):
 		score_label.update_score(score)
 
 func jump():
-	velocity.y = velocity.y + JUMP_SPEED
+	if not jumping:
+		print("jump")
+		jumping = true
+		velocity.y = velocity.y + JUMP_SPEED
 
 func alter_speed(speed):
 	velocity.z = velocity.z + speed
