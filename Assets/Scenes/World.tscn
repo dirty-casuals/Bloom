@@ -2555,16 +2555,6 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 630 )
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 637 )
 
-[node name="TileStandard1" parent="Tiles/Row 92" instance=ExtResource( 5 )]
-
-transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
-row = 91
-
-[node name="TileStandard2" parent="Tiles/Row 92" instance=ExtResource( 4 )]
-
-transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
-row = 91
-
 [node name="TileStandard4" parent="Tiles/Row 92" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
@@ -2579,16 +2569,6 @@ row = 91
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 644 )
-
-[node name="TileStandard1" parent="Tiles/Row 93" instance=ExtResource( 4 )]
-
-transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
-row = 92
-
-[node name="TileStandard2" parent="Tiles/Row 93" instance=ExtResource( 5 )]
-
-transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
-row = 92
 
 [node name="TileStandard4" parent="Tiles/Row 93" instance=ExtResource( 5 )]
 
@@ -2605,22 +2585,12 @@ row = 92
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 651 )
 
-[node name="TileStandard1" parent="Tiles/Row 94" instance=ExtResource( 5 )]
-
-transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
-row = 93
-
-[node name="TileStandard2" parent="Tiles/Row 94" instance=ExtResource( 4 )]
-
-transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
-row = 93
-
-[node name="TileStandard4" parent="Tiles/Row 94" instance=ExtResource( 4 )]
+[node name="TileJump" parent="Tiles/Row 94" instance=ExtResource( 6 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
 row = 93
 
-[node name="TileStandard5" parent="Tiles/Row 94" instance=ExtResource( 5 )]
+[node name="TileJump1" parent="Tiles/Row 94" instance=ExtResource( 6 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
 row = 93
@@ -2630,29 +2600,8 @@ row = 93
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 658 )
 
-[node name="TileStandard1" parent="Tiles/Row 95" instance=ExtResource( 4 )]
-
-transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0 )
-row = 94
-
-[node name="TileStandard2" parent="Tiles/Row 95" instance=ExtResource( 5 )]
-
-transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
-row = 94
-
-[node name="TileStandard4" parent="Tiles/Row 95" instance=ExtResource( 5 )]
-
-transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
-row = 94
-
-[node name="TileStandard5" parent="Tiles/Row 95" instance=ExtResource( 4 )]
-
-transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
-row = 94
-
 [node name="Row 96" type="Spatial" parent="Tiles"]
 
-editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 665 )
 
@@ -2666,24 +2615,8 @@ row = 95
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
 row = 95
 
-[node name="TileStandard3" parent="Tiles/Row 96" instance=ExtResource( 5 )]
-
-transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-row = 95
-
-[node name="TileStandard4" parent="Tiles/Row 96" instance=ExtResource( 4 )]
-
-transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
-row = 95
-
-[node name="TileStandard5" parent="Tiles/Row 96" instance=ExtResource( 5 )]
-
-transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
-row = 95
-
 [node name="Row 97" type="Spatial" parent="Tiles"]
 
-editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 672 )
 
@@ -2697,24 +2630,8 @@ row = 96
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
 row = 96
 
-[node name="TileStandard3" parent="Tiles/Row 97" instance=ExtResource( 4 )]
-
-transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-row = 96
-
-[node name="TileStandard4" parent="Tiles/Row 97" instance=ExtResource( 5 )]
-
-transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
-row = 96
-
-[node name="TileStandard5" parent="Tiles/Row 97" instance=ExtResource( 4 )]
-
-transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
-row = 96
-
 [node name="Row 98" type="Spatial" parent="Tiles"]
 
-editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 679 )
 
@@ -2726,21 +2643,6 @@ row = 97
 [node name="TileStandard2" parent="Tiles/Row 98" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
-row = 97
-
-[node name="TileStandard3" parent="Tiles/Row 98" instance=ExtResource( 5 )]
-
-transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-row = 97
-
-[node name="TileStandard4" parent="Tiles/Row 98" instance=ExtResource( 4 )]
-
-transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
-row = 97
-
-[node name="TileStandard5" parent="Tiles/Row 98" instance=ExtResource( 5 )]
-
-transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0 )
 row = 97
 
 [node name="Row 99" type="Spatial" parent="Tiles"]

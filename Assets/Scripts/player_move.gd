@@ -4,7 +4,7 @@ extends KinematicBody
 const SIDEWAYS_SPEED = 30
 const SCORE_DECREMENT_PER_FRAME = 1
 const GRAVITY = -200
-const JUMP_SPEED = 75
+const JUMP_HEIGHT = 75
 const MAX_FORWARD_SPEED = 100
 const FORWARDS_SPEED = 7
 
@@ -76,7 +76,7 @@ func on_enter_tile(points, row):
 func jump(row):
 	if row > current_row and not jumping:
 		jumping = true
-		velocity.y = velocity.y + JUMP_SPEED
+		velocity.y = velocity.y + JUMP_HEIGHT
 
 func reverb(strength, row):
 	if row > current_row: 
