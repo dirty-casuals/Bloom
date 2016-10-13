@@ -8,27 +8,29 @@ const JUMP_SPEED = 75
 const MAX_FORWARD_SPEED = 100
 const FORWARDS_SPEED = 7
 
-var position = Vector3(0, 0, 0)
 var current_row = 0
-var score_label
 var score = 0
 var velocity = Vector3()
 var jumping = false
 var steer_inversion = 1
+var game_ended = false
+
+onready var score_label = get_tree().get_current_scene().get_node('UI/Score')
+onready var start_translation = get_translation()
 
 func _ready():
 	set_fixed_process(true)
 	set_process(true)
-	score_label = get_tree().get_current_scene().get_node('UI/Score')
 
 func _process(delta):
-	score = score - SCORE_DECREMENT_PER_FRAME
-	
-	#if the score was under 0 then it's still 0 so don't update it visually
-	if score < 0:
-		score = 0
-	else:
-		score_label.update_score(score)
+	if not game_ended:
+		score = score - SCORE_DECREMENT_PER_FRAME
+
+		#if the score was under 0 then it's still 0 so don't update it visually
+		if score < 0:
+			score = 0
+		else:
+			score_label.update_score(score)
 
 func _fixed_process(delta):
 	var sideways_input = 0
@@ -83,3 +85,17 @@ func alter_speed(speed, row):
 func switch_steering(row):
 	if row > current_row: 
 		steer_inversion = -steer_inversion
+
+func on_game_over():
+	game_ended = true
+
+func on_game_reset():
+	current_row = 0
+	score = 0
+	score_label.update_score(score)
+	velocity = Vector3()
+	jumping = false
+	steer_inversion = 1
+	set_translation(start_translation)
+	game_ended = false
+

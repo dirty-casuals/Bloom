@@ -99,7 +99,7 @@ environment = SubResource( 2 )
 
 [node name="Ball" parent="." instance=ExtResource( 2 )]
 
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043715, 0, 3.40501 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
 
 [node name="Camera" type="Camera" parent="."]
 
@@ -118,6 +118,8 @@ v_offset = 0.0
 script/script = ExtResource( 3 )
 
 [node name="Tiles" type="Node" parent="."]
+
+editor/display_folded = true
 
 [node name="Row 1" type="Spatial" parent="Tiles"]
 
@@ -12046,8 +12048,6 @@ _update_shape_index = 0
 
 [node name="UI" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="GameOver" type="Label" parent="UI"]
 
 visibility/visible = false
@@ -12144,6 +12144,23 @@ script/script = ExtResource( 12 )
 transform/pos = Vector2( 34, 567 )
 texture = SubResource( 3 )
 
+[node name="RestartButton" type="Button" parent="UI"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 447.0
+margin/top = 372.0
+margin/right = 609.0
+margin/bottom = 415.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Restart"
+flat = false
+
 [node name="Lighting" type="Node" parent="."]
 
 [node name="Key Light" type="DirectionalLight" parent="Lighting"]
@@ -12195,5 +12212,7 @@ shadow/split_weight = 0.5
 shadow/zoffset_scale = 2.0
 
 [connection signal="body_enter" from="." to="." method="_on_World_body_enter"]
+
+[connection signal="pressed" from="UI/RestartButton" to="." method="_on_RestartButton_pressed"]
 
 
