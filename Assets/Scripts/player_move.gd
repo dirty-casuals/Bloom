@@ -82,9 +82,9 @@ func reverb(strength, row):
 	if row > current_row: 
 		velocity.z = -velocity.z * strength
 
-func alter_speed(speed, row):
+func alter_speed(factor, row):
 	if row > current_row: 
-		velocity.z = velocity.z + speed
+		velocity.z = velocity.z * factor
 
 func switch_steering(row):
 	if row > current_row: 
