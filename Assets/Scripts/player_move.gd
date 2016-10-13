@@ -78,6 +78,10 @@ func jump(row):
 		jumping = true
 		velocity.y = velocity.y + JUMP_SPEED
 
+func reverb(strength, row):
+	if row > current_row: 
+		velocity.z = -velocity.z * strength
+
 func alter_speed(speed, row):
 	if row > current_row: 
 		velocity.z = velocity.z + speed

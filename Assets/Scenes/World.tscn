@@ -811,7 +811,7 @@ row = 24
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 0, 0 )
 row = 25
-reverb_speed = -75
+reverb_strength = 0.25
 
 [node name="TileStandard3" parent="Tiles/Row 25" instance=ExtResource( 6 )]
 
@@ -822,7 +822,7 @@ row = 24
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 5.25, 0, 0 )
 row = 25
-reverb_speed = -75
+reverb_strength = 0.25
 
 [node name="TileStandard5" parent="Tiles/Row 25" instance=ExtResource( 6 )]
 
@@ -2359,7 +2359,7 @@ row = 82
 
 transform/local = Transform( 1.05, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 row = 82
-reverb_speed = -75
+reverb_strength = 0.25
 
 [node name="TileStandard3" parent="Tiles/Row 83" instance=ExtResource( 6 )]
 
