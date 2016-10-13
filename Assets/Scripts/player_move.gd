@@ -1,15 +1,15 @@
 
 extends KinematicBody
 
-const SIDEWAYS_SPEED = 15
+const SIDEWAYS_SPEED = 30
 const SCORE_DECREMENT_PER_FRAME = 1
 const GRAVITY = -200
 const JUMP_SPEED = 75
-const MAX_FORWARD_SPEED = 75
+const MAX_FORWARD_SPEED = 100
 
 var forwards_speed = 7
 var position = Vector3(0, 0, 0)
-var current_row = 09
+var current_row = 0
 var score_label
 var score = 0
 var velocity = Vector3()
@@ -68,7 +68,6 @@ func on_enter_tile(points, row):
 
 func jump(row):
 	if row > current_row and not jumping:
-		print("jump")
 		jumping = true
 		velocity.y = velocity.y + JUMP_SPEED
 
