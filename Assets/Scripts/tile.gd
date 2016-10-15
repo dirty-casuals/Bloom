@@ -2,7 +2,7 @@
 extends StaticBody
 
 export(int) var row
-var points_to_add = 50
+var points_to_add = 25
 onready var player = get_tree().get_current_scene().get_node("Ball/Player")
 
 func _on_body_enter( body ):

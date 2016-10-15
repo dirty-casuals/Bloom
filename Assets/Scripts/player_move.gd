@@ -24,13 +24,12 @@ func _ready():
 
 func _process(delta):
 	if not game_ended:
-		score = score - SCORE_DECREMENT_PER_FRAME
+		score = score - (SCORE_DECREMENT_PER_FRAME * current_row)
 
-		#if the score was under 0 then it's still 0 so don't update it visually
 		if score < 0:
 			score = 0
-		else:
-			score_label.update_score(score)
+
+		score_label.update_score(score)
 
 func _fixed_process(delta):
 	var sideways_input = 0
