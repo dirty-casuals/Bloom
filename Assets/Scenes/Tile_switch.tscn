@@ -48,7 +48,7 @@ textures/shade_param_tc = 0
 
 extents = Vector3( 1, 1, 1 )
 
-[node name="TileStandard" type="StaticBody"]
+[node name="TileSwitch" type="StaticBody"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 input/ray_pickable = true
@@ -126,6 +126,6 @@ shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
 
-[connection signal="body_enter" from="Area" to="." method="_on_body_enter"]
+[connection signal="body_enter" from="Area" to="." method="_on_Area_body_enter"]
 
 

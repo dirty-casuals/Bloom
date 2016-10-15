@@ -86,7 +86,7 @@ func alter_speed(factor, row):
 		velocity.z = velocity.z * factor
 
 func switch_steering(row):
-	if row > current_row: 
+	if row > current_row:
 		steer_inversion = -steer_inversion
 
 func on_game_over():
