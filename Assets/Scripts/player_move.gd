@@ -14,6 +14,7 @@ var velocity = Vector3()
 var jumping = false
 var steer_inversion = 1
 var game_ended = false
+var game_started = false
 
 onready var score_label = get_tree().get_current_scene().get_node('UI/Score')
 onready var start_translation = get_translation()
@@ -23,7 +24,7 @@ func _ready():
 	set_process(true)
 
 func _process(delta):
-	if not game_ended:
+	if not game_ended and game_started:
 		score = score - (SCORE_DECREMENT_PER_FRAME * current_row)
 
 		if score < 0:
@@ -32,39 +33,40 @@ func _process(delta):
 		score_label.update_score(score)
 
 func _fixed_process(delta):
-	var sideways_input = 0
-	var force = Vector3(0, GRAVITY, 0)
-	var z_factor = velocity.z + (FORWARDS_SPEED * delta)
-	var steer_factor = (1.421085 * pow(10, -14)) + (3.626263 * z_factor) - (0.066666667 * pow(z_factor, 2)) + (0.000404040404 * pow(z_factor, 3))
-
-	if Input.is_action_pressed("ui_left"):
-		sideways_input = 1 * steer_inversion
-
-	if Input.is_action_pressed('ui_right'):
-		sideways_input = -1 * steer_inversion
-
-	if velocity.z < 0:
-		sideways_input = sideways_input * -1
-
-	velocity.x = velocity.x + (sideways_input * steer_factor * delta)
-	velocity.z = z_factor
-
-	if velocity.z > MAX_FORWARD_SPEED:
-		velocity.z = MAX_FORWARD_SPEED
+	if game_started:
+		var sideways_input = 0
+		var force = Vector3(0, GRAVITY, 0)
+		var z_factor = velocity.z + (FORWARDS_SPEED * delta)
+		var steer_factor = (1.421085 * pow(10, -14)) + (3.626263 * z_factor) - (0.066666667 * pow(z_factor, 2)) + (0.000404040404 * pow(z_factor, 3))
 	
-	velocity = velocity + (force * delta)
+		if Input.is_action_pressed("ui_left"):
+			sideways_input = 1 * steer_inversion
+	
+		if Input.is_action_pressed('ui_right'):
+			sideways_input = -1 * steer_inversion
+	
+		if velocity.z < 0:
+			sideways_input = sideways_input * -1
+	
+		velocity.x = velocity.x + (sideways_input * steer_factor * delta)
+		velocity.z = z_factor
+	
+		if velocity.z > MAX_FORWARD_SPEED:
+			velocity.z = MAX_FORWARD_SPEED
+		
+		velocity = velocity + (force * delta)
+	
+		var motion = velocity * delta
+		motion = move(motion)
 
-	var motion = velocity * delta
-	motion = move(motion)
-
-	if (is_colliding()):
-		var n = get_collision_normal()
-		motion = n.slide(motion)
-		velocity = n.slide(velocity)
-		move(motion)
-
-	if jumping and velocity.y > 0:
-		jumping = false
+		if (is_colliding()):
+			var n = get_collision_normal()
+			motion = n.slide(motion)
+			velocity = n.slide(velocity)
+			move(motion)
+	
+		if jumping and velocity.y > 0:
+			jumping = false
 
 func on_enter_tile(points, row):
 	if row > current_row:
@@ -88,6 +90,9 @@ func alter_speed(factor, row):
 func switch_steering(row):
 	if row > current_row:
 		steer_inversion = -steer_inversion
+
+func on_game_start():
+	game_started = true
 
 func on_game_over():
 	game_ended = true
