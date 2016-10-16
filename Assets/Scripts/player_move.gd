@@ -77,7 +77,7 @@ func on_enter_tile(points, row, secondary_fn=null, secondary_arg=null):
 		maximum_row_reached = row
 		score_label.update_score(score)
 
-	if current_row != row or (current_row == row and !was_previous_tile_special):
+	if current_row != row or (current_row == row and not was_previous_tile_special):
 		if secondary_fn == null:
 			was_previous_tile_special = false
 		else:
@@ -119,6 +119,7 @@ func on_game_over():
 
 func on_game_reset():
 	current_row = 0
+	maximum_row_reached = 0
 	score = 0
 	score_label.update_score(score)
 	velocity = Vector3()
