@@ -16,6 +16,7 @@ var jumping = false
 var steer_inversion = 1
 var game_ended = false
 var game_started = false
+var was_previous_tile_special = false
 
 onready var score_label = get_tree().get_current_scene().get_node('UI/Score')
 onready var start_translation = get_translation()
@@ -76,11 +77,16 @@ func on_enter_tile(points, row, secondary_fn=null, secondary_arg=null):
 		maximum_row_reached = row
 		score_label.update_score(score)
 
-	if current_row != row and secondary_fn != null:
-		if secondary_arg == null:
-			secondary_fn.call_func()
+	if current_row != row or (current_row == row and !was_previous_tile_special):
+		if secondary_fn == null:
+			was_previous_tile_special = false
 		else:
-			secondary_fn.call_func(secondary_arg)
+			if secondary_arg == null:
+				secondary_fn.call_func()
+			else:
+				secondary_fn.call_func(secondary_arg)
+
+			was_previous_tile_special = true
 
 	current_row = row
 
