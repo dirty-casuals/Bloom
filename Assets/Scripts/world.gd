@@ -19,10 +19,12 @@ func _ready():
 	connect('game_start_signal', player, 'on_game_start')
 	connect('game_start_signal', timer, 'on_game_start')
 	start_button.show()
+	start_button.grab_focus()
 
 func _on_World_body_enter(body):
 	game_over_label.show()
 	restart_button.show()
+	restart_button.grab_focus()
 	emit_signal('game_over_signal')
 
 func _on_RestartButton_pressed():
