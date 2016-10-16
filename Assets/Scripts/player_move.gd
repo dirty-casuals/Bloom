@@ -43,19 +43,19 @@ func _fixed_process(delta):
 
 		if Input.is_action_pressed("ui_left"):
 			sideways_input = 1 * steer_inversion
-	
+
 		if Input.is_action_pressed('ui_right'):
 			sideways_input = -1 * steer_inversion
-	
+
 		if velocity.z < 0:
 			sideways_input = sideways_input * -1
-	
+
 		velocity.x = velocity.x + (sideways_input * steer_factor * delta)
 		velocity.z = z_factor
-	
+
 		if velocity.z > MAX_FORWARD_SPEED:
 			velocity.z = MAX_FORWARD_SPEED
-		 
+
 		velocity = velocity + (force * delta)
 
 		var motion = velocity * delta
