@@ -2,6 +2,7 @@
 extends Node2D
 
 onready var game_over_label = get_node('GameOver')
+onready var paused_label = get_node('Paused')
 onready var restart_button = get_node('RestartButton')
 onready var start_button = get_node('StartButton')
 onready var continue_button = get_node('ContinueButton')
@@ -53,12 +54,14 @@ func _on_ContinueButton_pressed():
 	unpause()
 
 func unpause():
+	paused_label.hide()
 	restart_button.hide()
 	continue_button.hide()
 	get_tree().set_pause(false)
 
 func pause():
 	get_tree().set_pause(true)
+	paused_label.show()
 	restart_button.show()
 	continue_button.show()
 	continue_button.grab_focus()
