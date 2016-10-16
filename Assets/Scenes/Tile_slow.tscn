@@ -65,7 +65,7 @@ constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 script/script = ExtResource( 1 )
 row = null
-slow_speed = -20
+slow_factor = 0.3
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 
@@ -127,6 +127,6 @@ shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
 
-[connection signal="body_enter" from="Area" to="." method="_on_Area_body_enter"]
+[connection signal="body_enter" from="Area" to="." method="_on_body_enter"]
 
 

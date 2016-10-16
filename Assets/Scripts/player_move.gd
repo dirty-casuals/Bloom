@@ -68,28 +68,31 @@ func _fixed_process(delta):
 		if jumping and velocity.y > 0:
 			jumping = false
 
-func on_enter_tile(points, row):
+# Not wild on this method of handling args to the secondary function
+func on_enter_tile(points, row, secondary_fn=null, secondary_arg=null):
 	if row > current_row:
 		score = score + (points * round(velocity.z))
 		current_row = row
 		score_label.update_score(score)
+		if secondary_fn != null:
+			if secondary_arg == null:
+				secondary_fn.call_func()
+			else:
+				secondary_fn.call_func(secondary_arg)
 
-func jump(row):
-	if row > current_row and not jumping:
+func jump():
+	if not jumping:
 		jumping = true
 		velocity.y = velocity.y + JUMP_HEIGHT
 
-func reverb(strength, row):
-	if row > current_row: 
-		velocity.z = -velocity.z * strength
+func reverb(strength):
+	velocity.z = -velocity.z * strength
 
-func alter_speed(factor, row):
-	if row > current_row: 
-		velocity.z = velocity.z * factor
+func alter_speed(factor):
+	velocity.z = velocity.z * factor
 
-func switch_steering(row):
-	if row > current_row:
-		steer_inversion = -steer_inversion
+func switch_steering():
+	steer_inversion = -steer_inversion
 
 func on_game_start():
 	game_started = true

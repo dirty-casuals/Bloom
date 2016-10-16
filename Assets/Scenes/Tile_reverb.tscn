@@ -65,6 +65,7 @@ constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 script/script = ExtResource( 1 )
 row = null
+reverb_strength = 0.25
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 
@@ -126,6 +127,6 @@ mesh/mesh = ExtResource( 2 )
 mesh/skeleton = NodePath("..")
 material/0 = SubResource( 3 )
 
-[connection signal="body_enter" from="Area" to="." method="_on_Area_body_enter"]
+[connection signal="body_enter" from="Area" to="." method="_on_body_enter"]
 
 

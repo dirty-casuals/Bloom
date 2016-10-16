@@ -126,6 +126,6 @@ mesh/mesh = ExtResource( 2 )
 mesh/skeleton = NodePath("..")
 material/0 = SubResource( 3 )
 
-[connection signal="body_enter" from="Area" to="." method="_on_Area_body_enter"]
+[connection signal="body_enter" from="Area" to="." method="_on_body_enter"]
 
 
