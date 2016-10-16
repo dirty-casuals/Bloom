@@ -9,6 +9,7 @@ const MAX_FORWARD_SPEED = 100
 const FORWARDS_SPEED = 7
 
 var current_row = 0
+var maximum_row_reached = 0
 var score = 0
 var velocity = Vector3()
 var jumping = false
@@ -64,21 +65,24 @@ func _fixed_process(delta):
 			motion = n.slide(motion)
 			velocity = n.slide(velocity)
 			move(motion)
-	
+
 		if jumping and velocity.y > 0:
 			jumping = false
 
 # Not wild on this method of handling args to the secondary function
 func on_enter_tile(points, row, secondary_fn=null, secondary_arg=null):
-	if row > current_row:
+	if row > maximum_row_reached:
 		score = score + (points * round(velocity.z))
-		current_row = row
+		maximum_row_reached = row
 		score_label.update_score(score)
-		if secondary_fn != null:
-			if secondary_arg == null:
-				secondary_fn.call_func()
-			else:
-				secondary_fn.call_func(secondary_arg)
+
+	if current_row != row and secondary_fn != null:
+		if secondary_arg == null:
+			secondary_fn.call_func()
+		else:
+			secondary_fn.call_func(secondary_arg)
+
+	current_row = row
 
 func jump():
 	if not jumping:
