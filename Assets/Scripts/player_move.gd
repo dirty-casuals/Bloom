@@ -38,8 +38,8 @@ func _fixed_process(delta):
 		var sideways_input = 0
 		var force = Vector3(0, GRAVITY, 0)
 		var z_factor = velocity.z + (FORWARDS_SPEED * delta)
-		var steer_factor = (1.421085 * pow(10, -14)) + (3.626263 * z_factor) - (0.066666667 * pow(z_factor, 2)) + (0.000404040404 * pow(z_factor, 3))
-	
+		var steer_factor = get_steer_amount(z_factor)
+
 		if Input.is_action_pressed("ui_left"):
 			sideways_input = 1 * steer_inversion
 	
@@ -54,9 +54,9 @@ func _fixed_process(delta):
 	
 		if velocity.z > MAX_FORWARD_SPEED:
 			velocity.z = MAX_FORWARD_SPEED
-		
+		 
 		velocity = velocity + (force * delta)
-	
+
 		var motion = velocity * delta
 		motion = move(motion)
 
@@ -84,13 +84,20 @@ func on_enter_tile(points, row, secondary_fn=null, secondary_arg=null):
 
 	current_row = row
 
+func get_steer_amount(forward_velocity):
+	return (1.421085 * pow(10, -14)) + (3.626263 * forward_velocity) - (0.066666667 * pow(forward_velocity, 2)) + (0.000404040404 * pow(forward_velocity, 3))
+
 func jump():
 	if not jumping:
 		jumping = true
 		velocity.y = velocity.y + JUMP_HEIGHT
 
 func reverb(strength):
-	velocity.z = -velocity.z * strength
+	var strength_to_apply = strength
+	if velocity.z < 0:
+		# special case where the player is moving backward
+		strength_to_apply = -strength
+	velocity.z = -velocity.z * strength_to_apply
 
 func alter_speed(factor):
 	velocity.z = velocity.z * factor
