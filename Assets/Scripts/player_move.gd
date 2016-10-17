@@ -20,6 +20,7 @@ var was_previous_tile_special = false
 
 onready var score_label = get_tree().get_current_scene().get_node('UI/Score')
 onready var start_translation = get_translation()
+onready var sample_player = get_tree().get_current_scene().get_node('SamplePlayer')
 
 func _ready():
 	set_fixed_process(true)
