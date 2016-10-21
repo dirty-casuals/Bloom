@@ -17,6 +17,7 @@ var steer_inversion = 1
 var game_ended = false
 var game_started = false
 var was_previous_tile_special = false
+var half_width
 
 onready var score_label = get_tree().get_current_scene().get_node('UI/Score')
 onready var start_translation = get_translation()
@@ -25,6 +26,7 @@ onready var sample_player = get_tree().get_current_scene().get_node('SamplePlaye
 func _ready():
 	set_fixed_process(true)
 	set_process(true)
+	half_width = get_viewport().get_rect().size.width / 2
 
 func _process(delta):
 	if not game_ended and game_started:
@@ -41,6 +43,14 @@ func _fixed_process(delta):
 		var force = Vector3(0, GRAVITY, 0)
 		var z_factor = velocity.z + (FORWARDS_SPEED * delta)
 		var steer_factor = get_steer_amount(z_factor)
+
+		if Input.is_mouse_button_pressed(BUTTON_LEFT):
+			var mouse = get_viewport().get_mouse_pos()
+
+			if mouse.x > half_width:
+				sideways_input = -1 * steer_inversion
+			else:
+				sideways_input = 1 * steer_inversion
 
 		if Input.is_action_pressed("ui_left"):
 			sideways_input = 1 * steer_inversion
@@ -129,3 +139,5 @@ func on_game_reset():
 	set_translation(start_translation)
 	game_ended = false
 
+func is_game_started():
+	return game_started
