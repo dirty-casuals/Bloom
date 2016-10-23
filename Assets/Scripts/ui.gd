@@ -7,6 +7,7 @@ onready var restart_button = get_node('RestartButton')
 onready var start_button = get_node('StartButton')
 onready var continue_button = get_node('ContinueButton')
 onready var pause_button = get_node('PauseButton')
+onready var main_menu_button = get_node('MainMenuButton')
 onready var player = get_tree().get_current_scene().get_node('Ball/Player')
 onready var timer = get_tree().get_current_scene().get_node('UI/Time')
 
@@ -61,6 +62,8 @@ func _on_ContinueButton_pressed():
 	unpause()
 
 func unpause():
+	main_menu_button.hide()
+	pause_button.show()
 	paused_label.hide()
 	restart_button.hide()
 	continue_button.hide()
@@ -68,6 +71,8 @@ func unpause():
 
 func pause():
 	get_tree().set_pause(true)
+	main_menu_button.show()
+	pause_button.hide()
 	paused_label.show()
 	restart_button.show()
 	continue_button.show()
@@ -76,8 +81,10 @@ func pause():
 func toggle_paused():
 	if player.is_game_started():
 		if get_tree().is_paused():
-			pause_button.show()
 			unpause()
 		else:
-			pause_button.hide()
 			pause()
+
+
+func _on_MainMenuButton_pressed():
+	get_tree().change_scene('res://Assets/Scenes/Main_menu.tscn')

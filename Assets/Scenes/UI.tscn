@@ -240,25 +240,26 @@ shortcut = null
 text = "Restart"
 flat = false
 
-[node name="StartButton" type="Button" parent="."]
+[node name="MainMenuButton" type="Button" parent="."]
 
 visibility/visible = false
+focus_neighbour/top = NodePath("../ContinueButton")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 439.0
-margin/top = 372.0
+margin/top = 444.0
 margin/right = 601.0
-margin/bottom = 415.0
-custom_fonts/font = SubResource( 12 )
+margin/bottom = 487.0
+custom_fonts/font = SubResource( 11 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Start"
+text = "Main Menu"
 flat = false
 
-[node name="StartButton1" type="Button" parent="."]
+[node name="StartButton" type="Button" parent="."]
 
 visibility/visible = false
 focus/ignore_mouse = false
@@ -297,6 +298,8 @@ flat = false
 [connection signal="pressed" from="ContinueButton" to="." method="_on_ContinueButton_pressed"]
 
 [connection signal="pressed" from="RestartButton" to="." method="_on_RestartButton_pressed"]
+
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
 
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 
